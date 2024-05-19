@@ -1,0 +1,29 @@
+<div class="container_card">
+  <div class="utilitarios"></div>
+
+  @if (!isAddSelected) {
+  <div class="grid_card">
+    @for (product of products; track product.name) {
+    <app-card
+      [name]="product.name"
+      [description]="product.description"
+      [quantity]="product.quantity"
+      [price]="product.price"
+      [sku]="product.sku"
+      [isAddSelected]="isAddSelected"
+      (isAddSelectedChange)="isAddSelected = $event"
+    />
+    }
+  </div>
+  } @else {
+  <app-card
+    [name]="'name'"
+    [description]="'description'"
+    [quantity]="20"
+    [price]="20"
+    [sku]="'sku'"
+    [isAddSelected]="isAddSelected"
+    (isAddSelectedChange)="isAddSelected = $event"
+  />
+  }
+</div>
