@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="product-details">
+    <p class="product-header">sku: {{ sku }}</p>
+    <img src="https://via.placeholder.com/150" alt="product" />
+    <h3>{{ name }}</h3>
+    <p>{{ description }}</p>
+    <p class="quantity">{{ quantity }} em estoque</p>
+    <p class="price">${{ price }}</p>
+    {{ isAddSelected ? 'Adicionado' : '' }}
+  </div>
+  <div class="actions">
+    <button class="action-button" (click)="select()">+</button>
+    <button class="action-button">+</button>
+  </div>
+</div>
