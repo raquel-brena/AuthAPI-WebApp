@@ -6,10 +6,15 @@
     <p>{{ description }}</p>
     <p class="quantity">{{ quantity }} em estoque</p>
     <p class="price">${{ price }}</p>
-    {{ isAddSelected ? 'Adicionado' : '' }}
+    {{ isAddSelected ? "Adicionado" : "" }}
   </div>
   <div class="actions">
-    <button class="action-button" (click)="select()">+</button>
+    <button
+      class="action-button"
+      (click)="select(sku, name, description, quantity, price, category)"
+    >
+      +
+    </button>
     <button class="action-button">+</button>
   </div>
 </div>
