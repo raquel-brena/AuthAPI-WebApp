@@ -1,4 +1,4 @@
-<div class="main inter-200">
-  <app-menu />
-  <app-conteudo />
+<div class="main">
+  <app-menu (itemMenuSelected)="changeItemMenuSelected($event)" />
+  <app-conteudo [itemMenuSelected]="itemMenuSelected" />
 </div>
