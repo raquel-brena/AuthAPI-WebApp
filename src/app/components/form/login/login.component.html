@@ -1,0 +1,26 @@
+<div class="main">
+  <div class="blur"></div>
+
+  <div class="login-container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h1>Seja bem vindo novamente!</h1>
+
+      <div class="input-container">
+        <label for="login">Login:</label>
+        <input type="text" id="login" name="login" formControlName="login" />
+      </div>
+
+      <div class="input-container">
+        <label for="password">Senha:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          formControlName="password"
+        />
+      </div>
+
+      <button type="submit" value="Submit">Login</button>
+    </form>
+  </div>
+</div>
