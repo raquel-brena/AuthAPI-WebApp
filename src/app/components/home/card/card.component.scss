@@ -28,10 +28,10 @@
       width: 2rem;
       border-radius: 0.3rem;
       border: none;
-
-      &:active{
-        transform: scale(0.9);
+      cursor: pointer;
       
+      &:active {
+        transform: scale(0.9);
       }
     }
   }
