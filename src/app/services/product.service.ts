@@ -2,7 +2,6 @@ import {
   HttpClient,
   HttpErrorResponse,
   HttpHeaders,
-
 } from '@angular/common/http';
 import {
   Inject,
@@ -33,11 +32,26 @@ export class ProductService {
   }
 
   getProducts(): Observable<Product[]> {
-    if(this.isBrowser) {
+    if (this.isBrowser) {
       this.token = localStorage.getItem('token');
     }
     return this.httpClient
       .get<Product[]>(this.url, {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${this.token}`,
+        }),
+      })
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  updatedProduct(product: Product): Observable<Product> {
+    console.log(product.name);
+    if (this.isBrowser) {
+      this.token = localStorage.getItem('token');
+    }
+    return this.httpClient
+      .put<Product>(this.url, product, {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
           Authorization: `Bearer ${this.token}`,
