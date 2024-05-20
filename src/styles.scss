@@ -4,6 +4,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  outline: none;
 }
 
 body {
@@ -11,8 +12,10 @@ body {
   flex-direction: column;
 }
 
-body {
-  line-height: 1;
+
+button {
+  cursor: pointer;
+  outline: none;
 }
 
 table {
@@ -20,26 +23,31 @@ table {
   border-spacing: 0;
 }
 
-.inter-200 {
+.inter {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
   font-style: normal;
+
   font-variation-settings: "slnt" 0;
 }
 
+.inter-200 {
+  @extend .inter;
+  font-weight: 200;
+}
+
+.inter-500 {
+  @extend .inter;
+  font-weight: 500;
+}
 .inter-400 {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
+  @extend .inter;
   font-weight: 400;
-  font-style: normal;
-  font-variation-settings: "slnt" 0;
 }
 
 .inter-600 {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
+  @extend .inter;
   font-weight: 600;
-  font-style: normal;
-  font-variation-settings: "slnt" 0;
 }
+
+
