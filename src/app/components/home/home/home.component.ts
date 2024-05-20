@@ -9,4 +9,13 @@ import { ConteudoComponent } from '../conteudo/conteudo.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {}
+export class HomeComponent {
+
+  itemMenuSelected: string = 'acessorio';
+
+  constructor() { }
+
+  changeItemMenuSelected(item: string) {
+    this.itemMenuSelected = item;
+  }
+}
