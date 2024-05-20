@@ -3,6 +3,9 @@
 
   @if (!isAddSelected) {
   <div class="grid_card">
+    <button class="right_component">
+      <p>+</p>
+    </button>
     @for (product of products; track product.name) {
     <app-card
       [name]="product.name"
@@ -10,20 +13,19 @@
       [quantity]="product.quantity"
       [price]="product.price"
       [sku]="product.sku"
+      [category]="product.category"
       [isAddSelected]="isAddSelected"
       (isAddSelectedChange)="isAddSelected = $event"
+      (productSelected)="productSelected = $event"
     />
     }
   </div>
   } @else {
-  <app-card
-    [name]="'name'"
-    [description]="'description'"
-    [quantity]="20"
-    [price]="20"
-    [sku]="'sku'"
-    [isAddSelected]="isAddSelected"
+  <app-add-product
+    [productSelected]="productSelected"
     (isAddSelectedChange)="isAddSelected = $event"
-  />
+    (productsUpdated)="updateProducts($event)"
+  >
+  </app-add-product>
   }
 </div>
