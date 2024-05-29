@@ -1,26 +1,62 @@
-<div class="main ">
-  <div class="blur"></div>
+<div class="w-screen h-screen bg-slate-50 row flex relative overflow-hidden">
+  <div
+    class="bg-[#81c342] flex relative items-center justify-center w-1/2 h-full"
+  >
+    <img class="cover flex w-[20%] h-auto" src="../../../../assets/logo.svg" />
+  </div>
+  <div class="flex w-1/2 h-full items-center justify-center">
+    <div class="blur"></div>
 
-  <div class="login-container">
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <h1>Seja bem vindo novamente!</h1>
+    <div
+      class="w-[90%] h-1/2 flex flex-col justify-center items-center p-2 rounded-md"
+    >
+      <form
+        class="flex w-[70%] text-pretty space-y-6 flex-col items-center justify-center p-2"
+        [formGroup]="form"
+        (ngSubmit)="onSubmit()"
+      >
+        <h1 class="text-xl font-semibold flex">Seja bem vindo novamente!</h1>
+        <div class="w-full gap-3 flex flex-col">
+          <div
+            class="border-b-[1px] bg-none flex-col border-slate-500 h-10 placeholder-transparent plache flex w-full"
+          >
+            <input
+              id="login"
+              type="text"
+              NgModeltype="text"
+              id="login"
+              name="login"
+              placeholder="login"
+              class="focus:outline-none focus:ring-0 bg-transparent"
+              formControlName="login"
+            />
+          </div>
 
-      <div class="input-container">
-        <label for="login">Login</label>
-        <input type="text" id="login" name="login" formControlName="login" />
-      </div>
+          <div
+            class="border-b-[1px] flex-col bg-none border-slate-500 h-10 focus:ring-0 placeholder-transparent plache flex w-full"
+          >
+            <input
+              id="password"
+              type="text"
+              NgModel
+              type="password"
+              id="password"
+              name="password"
+              class="focus:outline-none focus:ring-0 bg-transparent"
+              placeholder="password"
+              formControlName="password"
+            />
+          </div>
+        </div>
 
-      <div class="input-container">
-        <label for="password">Senha</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          formControlName="password"
-        />
-      </div>
-
-      <button type="submit" value="Submit">Login</button>
-    </form>
+        <button
+          class="w-full rounded-md text-white font-semibold mt-4 px-3 bg-[#81c342] h-9 hover:bg-[#80c34296] active:bg-[#80c342] focus:outline-none focus:ring-2 focus:ring-[#81c342] focus:ring-opacity-50 transition-all duration-300 ease-in-out"
+          type="submit"
+          value="Submit"
+        >
+          Login
+        </button>
+      </form>
+    </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MenuComponent } from '../menu/menu.component';
 import { ConteudoComponent } from '../conteudo/conteudo.component';
 
@@ -6,14 +6,12 @@ import { ConteudoComponent } from '../conteudo/conteudo.component';
   selector: 'app-home',
   standalone: true,
   imports: [MenuComponent, ConteudoComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+  templateUrl: './home.component.html'
 })
 export class HomeComponent {
+  @Input() itemMenuSelected: string = '';
 
-  itemMenuSelected: string = 'acessorio';
-
-  constructor() { }
+  constructor() {}
 
   changeItemMenuSelected(item: string) {
     this.itemMenuSelected = item;

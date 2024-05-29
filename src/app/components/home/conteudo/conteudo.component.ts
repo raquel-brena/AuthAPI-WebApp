@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
-import { BarraSuperiorComponent } from '../barra-superior/barra-superior.component';
+import { Component, Input } from '@angular/core';
 import { ContainerCardComponent } from '../container-card/container-card.component';
 
 @Component({
   selector: 'app-conteudo',
   standalone: true,
-  imports: [BarraSuperiorComponent, ContainerCardComponent],
+  imports: [ ContainerCardComponent],
   templateUrl: './conteudo.component.html',
   styleUrl: './conteudo.component.scss',
 })
+export class ConteudoComponent {
+  @Input() itemMenuSelected: string = '';
 
-export class ConteudoComponent {}
+  constructor() {}
+}

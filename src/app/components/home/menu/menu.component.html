@@ -1,5 +1,7 @@
-<div class="menu">
-  <div class="buttons">
+<div
+  class="w-[16vw] bg-white h-full flex justify-center flex-col flex-end border-r-2 border-[#81c342]"
+>
+  <div class="w-full h-[80%] flex flex-col gap-4">
     @for(item of items; track item.category){
     <app-item-menu
       (itemSelected)="changeItemMenuSelected($event)"

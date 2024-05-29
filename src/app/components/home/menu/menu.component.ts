@@ -5,8 +5,7 @@ import { ItemMenuComponent } from '../item-menu/item-menu.component';
   selector: 'app-menu',
   standalone: true,
   imports: [ItemMenuComponent],
-  templateUrl: './menu.component.html',
-  styleUrl: './menu.component.scss',
+  templateUrl: './menu.component.html'
 })
 export class MenuComponent {
   @Output() itemMenuSelected = new EventEmitter<string>();
@@ -18,13 +17,13 @@ export class MenuComponent {
     { category: 'Monitor', image_url: 'assets/monitor.svg' },
     { category: 'Cadeira', image_url: 'assets/cadeira.svg' },
   ];
-  
+
   selectedItem: string = 'Acessorio';
 
   constructor() {}
 
   changeItemMenuSelected(item: string) {
     this.selectedItem = item;
-    this.itemMenuSelected.emit(item);
+    this.itemMenuSelected.emit(this.selectedItem);
   }
 }

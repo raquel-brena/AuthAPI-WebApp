@@ -25,20 +25,19 @@ export class CardComponent {
 
   select = (
     sku: string,
-    name: string ,
+    name: string,
     description: string | undefined,
     quantity: number,
     price: number,
     category: string
   ) => {
-
     const product: Product = {
       sku,
       name,
       description: description || '',
       quantity,
       price,
-      category
+      category,
     };
 
     this.isAddSelected = !this.isAddSelected;

@@ -1,11 +1,13 @@
-<div class="container_card">
-  <div class="utilitarios"></div>
+<div class="w-screen h-full flex flex-col">
+  <div class="w-full h-[20vh] flex relative">teste</div>
 
   @if (!isAddSelected) {
-  <div class="grid_card">
+  <div class="grid overflow-y-auto place-content-center
+  relative items-start w-[95%] bg-pink-400 grid-cols-4 row-ga">
     <button class="right_component">
       <p>+</p>
     </button>
+
     @for (product of products; track product.name) {
     <app-card
       [name]="product.name"
@@ -20,12 +22,12 @@
     />
     }
   </div>
+
   } @else {
   <app-add-product
     [productSelected]="productSelected"
     (isAddSelectedChange)="isAddSelected = $event"
     (productsUpdated)="updateProducts($event)"
-  >
-  </app-add-product>
+  />
   }
 </div>
