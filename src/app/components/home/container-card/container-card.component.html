@@ -1,33 +1,42 @@
-<div class="w-screen h-full flex flex-col">
-  <div class="w-full h-[20vh] flex relative">teste</div>
+<div class="w-full h-full lace-items-center box-border flex-col flex">
+  <div class="w-full h-[20%] flex flex-col relative">
+    <div class="w-full flex flex-col gap-3">
+      <h1 class="text-2xl ml-2 ">Estoque</h1>
+      <div class="w-full bg-gray-200 h-[1px]"></div>
+    </div>
+  </div>
 
-  @if (!isAddSelected) {
-  <div class="grid overflow-y-auto place-content-center
-  relative items-start w-[95%] bg-pink-400 grid-cols-4 row-ga">
-    <button class="right_component">
-      <p>+</p>
-    </button>
+  <div class="h-[80%] w-full box-border flex flex-col items-center">
+    @if (!isAddSelected) {
+    <div
+      class="grid place-content-center relative items-start w-[95%] grid-cols-4 row-gap"
+    >
+      <button class="right_component">
+        <p>+</p>
+      </button>
 
-    @for (product of products; track product.name) {
-    <app-card
-      [name]="product.name"
-      [description]="product.description"
-      [quantity]="product.quantity"
-      [price]="product.price"
-      [sku]="product.sku"
-      [category]="product.category"
-      [isAddSelected]="isAddSelected"
+      @for (product of products; track product.name) {
+      <app-card
+        [name]="product.name"
+        [description]="product.description"
+        [quantity]="product.quantity"
+        [price]="product.price"
+        [sku]="product.sku"
+        [category]="product.category"
+        [isAddSelected]="isAddSelected"
+        (isAddSelectedChange)="isAddSelected = $event"
+        (productSelected)="productSelected = $event"
+      />
+      }
+    </div>
+
+    } @else {
+    <app-add-product
+      class="w-full flex"
+      [productSelected]="productSelected"
       (isAddSelectedChange)="isAddSelected = $event"
-      (productSelected)="productSelected = $event"
+      (productsUpdated)="updateProducts($event)"
     />
     }
   </div>
-
-  } @else {
-  <app-add-product
-    [productSelected]="productSelected"
-    (isAddSelectedChange)="isAddSelected = $event"
-    (productsUpdated)="updateProducts($event)"
-  />
-  }
 </div>

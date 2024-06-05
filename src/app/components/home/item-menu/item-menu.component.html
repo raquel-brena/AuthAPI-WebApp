@@ -1,7 +1,9 @@
 <button
-  class="flex w-32 h-32 p-4 justify-center items-center border-none cursor-pointer select-none group"
+  class="flex w-auto h-[20%] box-border p-4 justify-center group items-center border-none cursor-pointer select-none group"
 >
-  <div class="flex flex-col items-center place-items-center gap-4">
+  <div
+    class="flex flex-col items-center group-hover:text-[#81c342] group-hover:text-semibold place-items-center gap-4"
+  >
     <img
       src="{{ image_url }}"
       alt="{{ category }}"
@@ -9,4 +11,7 @@
     />
     {{ category }}
   </div>
+  <div
+    class="group-hover:bg-gray-300 group-hover:w-12 group-hover:blur-xl group-hover:mix-blend-multiply group-hover:opacity-50 group-hover:h-[5%] group-hover:absolute"
+  ></div>
 </button>
