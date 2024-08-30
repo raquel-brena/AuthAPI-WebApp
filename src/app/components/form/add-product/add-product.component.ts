@@ -28,22 +28,32 @@ export class AddProductComponent {
 
   mockProduct: Product = {
     name: 'teste',
-    price: 0,
     description: 'teste',
     sku: 'teste',
-    quantity: 54,
     category: 'MONITOR',
+    variants: 0,
+    gender: 'male',
+    retail_price: 0,
+    wholesale_price: 0,
+    status: 'active',
+    barcode: '',
+    unit: 'each',
+    stock: {
+      on_hand: 0,
+      to_be_receveid: 0,
+      to_be_packed: 0,
+    },
+    history: [],
+    notes: [],
   };
 
   ngOnInit() {
     this.editForm = new FormGroup({
       name: new FormControl(this.productSelected.name),
-      price: new FormControl(this.productSelected.price),
       description: new FormControl(
         this.productSelected.description ? this.productSelected.description : ''
       ),
       sku: new FormControl(this.productSelected.sku),
-      quantity: new FormControl(this.productSelected.price),
       category: new FormControl(this.productSelected.category),
     });
   }
@@ -62,11 +72,23 @@ export class AddProductComponent {
   ) => {
     const updatedProduct: Product = {
       name,
-      price,
       description,
       sku,
-      quantity,
       category,
+      variants: 0,
+      gender: 'male',
+      retail_price: 0,
+      wholesale_price: 0,
+      status: 'active',
+      barcode: '',
+      unit: 'each',
+      stock: {
+        on_hand: 0,
+        to_be_receveid: 0,
+        to_be_packed: 0,
+      },
+      history: [],
+      notes: [],
     };
 
     this.productService.updatedProduct(updatedProduct).subscribe(

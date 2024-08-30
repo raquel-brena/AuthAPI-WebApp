@@ -12,12 +12,11 @@ export class CardComponent {
   @Input()
   name!: string;
   @Input()
-  price!: number;
+  retail_price!: number;
   @Input()
   description: string | undefined;
   @Input()
   sku!: string;
-  @Input() quantity!: number;
   @Input() category!: string;
   @Input() isAddSelected!: boolean;
   @Output() isAddSelectedChange = new EventEmitter<boolean>();
@@ -27,17 +26,28 @@ export class CardComponent {
     sku: string,
     name: string,
     description: string | undefined,
-    quantity: number,
-    price: number,
+    retail_price: number,
     category: string
   ) => {
     const product: Product = {
       sku,
       name,
       description: description || '',
-      quantity,
-      price,
+      retail_price,
       category,
+      variants: 0,
+      gender: 'male',
+      wholesale_price: 0,
+      status: 'active',
+      barcode: '',
+      unit: 'each',
+      stock: {
+        on_hand: 0,
+        to_be_receveid: 0,
+        to_be_packed: 0
+      },
+      history: [],
+      notes: []
     };
 
     this.isAddSelected = !this.isAddSelected;

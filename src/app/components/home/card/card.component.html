@@ -1,18 +1,17 @@
-<div class="w-52 h-72 relative  flex z-10 
-rounded-sm outline-none shadow-lg card">
+<div
+  class="w-52 h-72 relative flex z-10 rounded-sm outline-none shadow-lg card"
+>
   <div class="product-details">
     <p class="product-header p-min">sku: {{ sku }}</p>
     <img src="https://via.placeholder.com/150" alt="product" />
     <h3>{{ name }}</h3>
     <p class="p-min">{{ description }}</p>
-    <p class="p-min">{{ quantity }} em estoque</p>
-    <p class="price">${{ price }}</p>
     {{ isAddSelected ? "Adicionado" : "" }}
   </div>
   <div class="actions">
     <button
       class="action-button"
-      (click)="select(sku, name, description, quantity, price, category)"
+      (click)="select(sku, name, description, retail_price, category)"
     >
       +
     </button>

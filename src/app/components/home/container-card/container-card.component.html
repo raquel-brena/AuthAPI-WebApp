@@ -1,9 +1,6 @@
 <div class="w-full h-full lace-items-center box-border flex-col flex">
-  <div class="w-full h-[20%] flex flex-col relative">
-    <div class="w-full flex flex-col gap-3">
-      <h1 class="text-2xl ml-2 ">Estoque</h1>
-      <div class="w-full bg-gray-200 h-[1px]"></div>
-    </div>
+  <div class="w-full h-[15%] flex flex-col relative bg-white">
+
   </div>
 
   <div class="h-[80%] w-full box-border flex flex-col items-center">
@@ -19,8 +16,7 @@
       <app-card
         [name]="product.name"
         [description]="product.description"
-        [quantity]="product.quantity"
-        [price]="product.price"
+        [retail_price]="product.retail_price"
         [sku]="product.sku"
         [category]="product.category"
         [isAddSelected]="isAddSelected"

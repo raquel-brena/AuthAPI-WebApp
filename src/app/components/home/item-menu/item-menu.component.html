@@ -1,13 +1,15 @@
 <button
-  class="flex w-auto h-[20%] box-border p-4 justify-center group items-center border-none cursor-pointer select-none group"
+  class="flex text-sm w-fit h-[10%] hover:bg-bg_fume-100 text-text-secondary
+  duration-300 transition-all
+  font-semibold box-border px-3 py-1 justify-center group items-center cursor-pointer select-none group border border-bg_fume-100 rounded-full"
 >
   <div
-    class="flex flex-col items-center group-hover:text-[#81c342] group-hover:text-semibold place-items-center gap-4"
+    class="flex items-center group-hover:text-text-primary group-hover:text-semibold place-items-center gap-1"
   >
     <img
       src="{{ image_url }}"
       alt="{{ category }}"
-      class="group-hover:-translate-y-2 duration-300 transition-all"
+      class="group-hover:-translate-y-2 duration-300 transition-all size-6 fill-text-secondary"
     />
     {{ category }}
   </div>

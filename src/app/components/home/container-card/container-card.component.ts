@@ -17,15 +17,27 @@ export class ContainerCardComponent implements OnInit {
 
   productSelected: Product = {
     name: '',
-    price: 0,
     description: '',
     sku: '',
-    quantity: 0,
     category: '',
+    variants: 0,
+    gender: 'male',
+    retail_price: 0,
+    wholesale_price: 0,
+    status: 'active',
+    barcode: '',
+    unit: 'each',
+    stock: {
+      on_hand: 0,
+      to_be_receveid: 0,
+      to_be_packed: 0,
+    },
+    history: [],
+    notes: [],
   };
 
   isAddSelected: boolean = false;
-  
+
   ngOnInit() {
     this.fetchProducts();
   }
