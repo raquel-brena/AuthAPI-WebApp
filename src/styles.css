@@ -4,6 +4,64 @@
 @tailwind components;
 @tailwind utilities;
 
+@media (prefers-color-scheme: dark) {
+  :root{
+  --bg: #111E22;
+  --bg-accent: #17262E;
+  --bg-fume: #152930;
+  --bg-fume-100: #1C2E37;
+  --text-primary: #fff;
+  --text-secondary: #647678;
+  --text-tertiary: #FFFFFF;
+  --theme: #39DB7D;
+  --theme-hover: #259F58;
+  --theme-accent: #00AFE7;
+  --other: #FFA53B;
+  --text-placeholder: #ABABAB;
+  --text-on-accent: #f9fafb;
+  --border-primary: #DADADA;
+  --border-secondary: #e5e7eb;
+}
+
+}
+
+:root[data-theme="light"] {
+  --bg: #F4F4F4;
+  --bg-accent: #FFFFFF;
+  --bg-fume: #EAEAEA;
+  --bg-fume-100: #F2F2F2;
+  --text-primary: #161616;
+  --text-secondary: #647678;
+  --text-tertiary: #858585;
+  --theme: #39DB7D;
+  --theme-hover: #259F58;
+  --theme-accent: #00AFE7;
+  --other: #FFA53B;
+  --text-placeholder: #ABABAB;
+  --text-on-accent: #f9fafb;
+  --border-primary: #DADADA;
+  --border-secondary: #e5e7eb;
+}
+
+:root[data-theme="dark"] {
+  --bg: #111E22;
+  --bg-accent: #17262E;
+  --bg-fume: #152930;
+  --bg-fume-100: #1C2E37;
+  --text-primary: #fff;
+  --text-secondary: #647678;
+  --text-tertiary: #FFFFFF;
+  --theme: #39DB7D;
+  --theme-hover: #259F58;
+  --theme-accent: #00AFE7;
+  --other: #FFA53B;
+  --text-placeholder: #ABABAB;
+  --text-on-accent: #f9fafb;
+  --border-primary: #DADADA;
+  --border-secondary: #e5e7eb;
+}
+
+
 html {
   margin: 0;
   padding: 0;
