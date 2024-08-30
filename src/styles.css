@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (prefers-color-scheme: dark) {
   :root{
   --bg: #111E22;
   --bg-accent: #17262E;
@@ -21,8 +20,6 @@
   --text-on-accent: #f9fafb;
   --border-primary: #DADADA;
   --border-secondary: #e5e7eb;
-}
-
 }
 
 :root[data-theme="light"] {
