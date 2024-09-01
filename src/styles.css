@@ -8,7 +8,7 @@
   --bg: #111E22;
   --bg-accent: #17262E;
   --bg-fume: #152930;
-  --bg-fume-100: #1C2E37;
+  --bg-fume-100: #233A44;
   --text-primary: #fff;
   --text-secondary: #647678;
   --text-tertiary: #FFFFFF;
@@ -44,7 +44,7 @@
   --bg: #111E22;
   --bg-accent: #17262E;
   --bg-fume: #152930;
-  --bg-fume-100: #1C2E37;
+  --bg-fume-100: #233A44;
   --text-primary: #fff;
   --text-secondary: #647678;
   --text-tertiary: #FFFFFF;
@@ -77,3 +77,10 @@ button {
   cursor: pointer;
   outline: none;
 }
+
+.box {
+  @apply flex bg-bg_accent rounded-md h-full p-1 px-3 flex-col overflow-auto;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
