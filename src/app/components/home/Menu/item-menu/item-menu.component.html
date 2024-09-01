@@ -1,22 +1,21 @@
 <button
-  class="flex md:text-sm w-fit h-[10%] hover:bg-bg_fume-100 text-text-secondary
-  duration-300 transition-all font-semibold box-border px-3 py-1 justify-center 
-  group items-center cursor-pointer select-none group border border-bg_fume-100 
-  rounded-full"
+  (click)="onButtonClick()"
+  class="flex md:text-sm w-fit h-[10%] hover:bg-bg_fume-100 text-text-secondary duration-300 transition-all font-semibold box-border px-3 py-1 justify-center group items-center cursor-pointer select-none group border border-bg_fume-100 rounded-full"
+  [ngClass]="{
+    'bg-bg_fume-100': category === selectedItem,
+    'text-text-primary': category === selectedItem,
+  }"
 >
   <div
-    class="flex items-center group-hover:text-text-primary group-hover:text-semibold 
-    place-items-center gap-1"
+    class="flex items-center justify-center group-hover:text-text-primary group-hover:text-semibold place-items-center gap-1"
+    [ngClass]="{
+    'text-text-primary': category === selectedItem,
+  }"
   >
-    <img
-      src="{{ image_url }}"
-      alt="{{ category }}"
-      class="group-hover:-translate-y-2 duration-300 transition-all size-6 fill-text-secondary"
-    />
+    <mat-icon class="text-sm place-content-center flex"
+    [ngClass]="{
+    'text-theme': category === selectedItem,
+    }">{{ icon }}</mat-icon>
     {{ category }}
   </div>
-  <div
-    class="group-hover:bg-gray-300 group-hover:w-12 group-hover:blur-xl group-hover:mix-blend-multiply 
-    group-hover:opacity-50 group-hover:h-[5%] group-hover:absolute"
-  ></div>
 </button>

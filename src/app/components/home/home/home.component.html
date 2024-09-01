@@ -1,6 +1,9 @@
 <div
   class="w-screen h-screen text-text-primary justify-center flex-col flex bg-bg box-border overflow-hidden"
 >
-  <app-menu (itemMenuSelected)="changeItemMenuSelected($event)" />
-  <app-container-card [itemMenuSelected]="itemMenuSelected" />
+  <app-menu
+    [selectedItem]="selectedItem"
+    (setSelectedItem)="setSelectedItem($event)"
+  />
+  <app-container-card [selectedItem]="selectedItem" />
 </div>

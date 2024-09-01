@@ -1,4 +1,13 @@
-<div class="flex bg-bg_accent rounded-md 
- h-full p-1 px-2 flex-col">
-    <ng-content></ng-content>
+<div
+  class="{flex
+  bg-bg_accent
+  rounded-md
+  h-full
+  [w- + width]
+  p-1
+  px-2
+  flex-col
+  overflow-auto}"
+>
+  <ng-content></ng-content>
 </div>

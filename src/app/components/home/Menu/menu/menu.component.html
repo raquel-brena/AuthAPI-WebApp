@@ -1,13 +1,14 @@
-<div class="w-full h-[9vh] justify-between flex  px-4">
+<div class="w-full h-[9vh] justify-between flex px-4">
   <div class="w-1/3 flex h-full items-center text-2xl font-semibold">
     <img src="assets/logo.svg" class="size-8" />Invetar
   </div>
   <div class="w-2/3 box-border items-center flex gap-4 justify-center">
     @for(item of items; track item.category){
     <app-item-menu
-      (itemSelected)="changeItemMenuSelected($event)"
+      [selectedItem]="selectedItem"
+      (setSelectedItem)="changeItemMenuSelected($event)"
       [category]="item.category"
-      [image_url]="item.image_url"
+      [icon]="item.icon"
     ></app-item-menu>
     }
   </div>

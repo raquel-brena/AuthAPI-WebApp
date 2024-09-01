@@ -1,29 +1,28 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ItemMenuComponent } from '../item-menu/item-menu.component';
 
 @Component({
   selector: 'app-menu',
   standalone: true,
   imports: [ItemMenuComponent],
-  templateUrl: './menu.component.html'
+  templateUrl: './menu.component.html',
 })
 export class MenuComponent {
-  @Output() itemMenuSelected = new EventEmitter<string>();
+  @Input() selectedItem!: string;
+  @Output() setSelectedItem = new EventEmitter<string>();
 
   items = [
-    { category: 'Dashboard', image_url: 'assets/acessorio.svg' },
-    { category: 'Invetory', image_url: 'assets/notebook.svg' },
-    { category: 'Sales', image_url: 'assets/desktop.svg' },
-    { category: 'Order', image_url: 'assets/monitor.svg' },
-    { category: 'Report', image_url: 'assets/cadeira.svg' },
+    { category: 'Dashboard', icon: 'dashboard' },
+    { category: 'Invetory', icon: 'inventory' },
+    { category: 'Sales', icon: 'store' },
+    { category: 'Order', icon: 'shopping_bag' },
+    { category: 'Report', icon: 'report' },
   ];
-
-  selectedItem: string = 'Acessorio';
 
   constructor() {}
 
-  changeItemMenuSelected(item: string) {
-    this.selectedItem = item;
-    this.itemMenuSelected.emit(this.selectedItem);
+  changeItemMenuSelected(category: string) {
+    this.selectedItem = category;
+    this.setSelectedItem.emit(category); // Corrigido para usar o método emit
   }
 }
