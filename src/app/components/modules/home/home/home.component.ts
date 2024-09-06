@@ -10,7 +10,7 @@ import { InventoryComponent } from '../../inventory/index/inventory.component';
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
-  @Input() selectedItem: string = 'Inventory';
+  @Input() selectedItem: string = 'Invetory';
 
   constructor() {}
 

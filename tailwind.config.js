@@ -20,7 +20,7 @@ module.exports = {
         },
         theme: "var(--theme)",
         theme_hover: "var(--theme-hover)",
-        theme_accent: "var(--theme-active)",
+        theme_accent: "var(--theme-accent)",
         border: {
           primary: "var(--border-primary)",
           secondary: "var(--border-secondary)",
