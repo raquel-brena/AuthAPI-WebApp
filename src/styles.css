@@ -35,7 +35,7 @@
   --theme-accent: #00AFE7;
   --other: #FFA53B;
   --text-placeholder: #ABABAB;
-  --text-on-accent: #f9fafb;
+  --text-on-accent: #161616;
   --border-primary: #DADADA;
   --border-secondary: #e5e7eb;
 }
@@ -80,6 +80,10 @@ button {
 
 .box {
   @apply flex bg-bg_accent rounded-md h-full p-1 px-3 flex-col overflow-auto;
+}
+
+.container-index {
+  @apply w-full h-[91vh] bg-bg px-10 place-items-center box-border flex-col flex
 }
 
 html, body { height: 100%; }

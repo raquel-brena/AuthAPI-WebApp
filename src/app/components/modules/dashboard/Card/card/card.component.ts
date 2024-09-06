@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Product } from '../../../../models/product';
+import { Product } from '../../../../../models/product';
 
 @Component({
   selector: 'app-card',
@@ -44,10 +44,10 @@ export class CardComponent {
       stock: {
         on_hand: 0,
         to_be_receveid: 0,
-        to_be_packed: 0
+        to_be_packed: 0,
       },
       history: [],
-      notes: []
+      notes: [],
     };
 
     this.isAddSelected = !this.isAddSelected;

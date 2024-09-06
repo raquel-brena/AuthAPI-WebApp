@@ -1,0 +1,15 @@
+<div
+  class="w-screen h-screen text-text-primary justify-center
+  flex-col flex bg-bg box-border overflow-hidden"
+>
+  <app-menu
+    [selectedItem]="selectedItem"
+    (setSelectedItem)="setSelectedItem($event)"
+  />
+
+  @if (selectedItem === 'Dashboard') {
+  <app-container-card [selectedItem]="selectedItem" />
+  } @else {
+  <app-inventory />
+  }
+</div>

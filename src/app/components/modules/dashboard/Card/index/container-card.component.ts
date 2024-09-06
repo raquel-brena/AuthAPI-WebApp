@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CardComponent } from '../card/card.component';
-import { Product } from '../../../../models/product';
-import { ProductService } from '../../../../services/product.service';
-import { AddProductComponent } from '../../../form/add-product/add-product.component';
-import { ButtonComponent } from '../../../globalComponents/button/button.component';
-import { BoxComponent } from '../../../globalComponents/box/box.component';
-import { CardProductComponent } from '../../../globalComponents/card-product/card-product.component';
+import { Product } from '../../../../../models/product';
+import { ProductService } from '../../../../../services/product.service';
+import { AddProductComponent } from '../../../../form/add-product/add-product.component';
+import { ButtonComponent } from '../../../../globalComponents/button/button.component';
+import { BoxComponent } from '../../../../globalComponents/box/box.component';
+import { CardProductComponent } from '../../../../globalComponents/card-product/card-product.component';
 import { TotalCardComponent } from '../total-card/total-card.component';
 import { MatIconModule } from '@angular/material/icon';
 
