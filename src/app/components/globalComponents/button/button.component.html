@@ -1,5 +1,15 @@
-<button class="{
-    'border flex  border-theme bg-theme text-bg font-semibold rounded-xl p-2 ': true,
-    'bg-bg text-primary px-6' : outline }">
-      {{text}}
-  </button>
+<button [ngClass]="buttonClasses">
+  @if (icon1) {
+  <mat-icon
+    [attr.data-outline]="outline"
+    class="data-[outline=true]:text-theme text-text-placeholder text-base font-semibold flex place-content-center"
+    >{{ icon1 }}</mat-icon
+  >}
+  {{ text }}
+  @if (icon2) {
+  <mat-icon
+    [attr.data-outline]="outline"
+    class="data-[outline=true]:text-theme text-text-placeholder text-base font-semibold flex place-content-center"
+    >{{ icon2 }}</mat-icon
+  >}
+</button>

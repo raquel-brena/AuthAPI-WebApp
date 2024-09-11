@@ -1,6 +1,6 @@
 <button
   (click)="onButtonClick()"
-  class="flex md:text-sm w-fit h-[10%] hover:bg-bg_fume-100 text-text-secondary duration-300 transition-all font-semibold box-border px-3 py-1 justify-center group items-center cursor-pointer select-none group border border-bg_fume-100 rounded-full"
+  class="flex md:text-sm w-fit h-[10%] hover:bg-bg_fume-100 text-text-secondary duration-300 transition-all font-semibold box-border px-3 py-1 justify-center group items-center cursor-pointer select-none group border border-border-primary rounded-full"
   [ngClass]="{
     'bg-bg_fume-100': category === selectedItem,
     'text-text-primary': category === selectedItem,
@@ -12,10 +12,13 @@
     'text-text-primary': category === selectedItem,
   }"
   >
-    <mat-icon class="text-sm place-content-center flex"
-    [ngClass]="{
+    <mat-icon
+      class="text-sm place-content-center flex"
+      [ngClass]="{
     'text-theme': category === selectedItem,
-    }">{{ icon }}</mat-icon>
+    }"
+      >{{ icon }}</mat-icon
+    >
     {{ category }}
   </div>
 </button>

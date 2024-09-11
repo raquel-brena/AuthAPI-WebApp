@@ -25,6 +25,7 @@ module.exports = {
           primary: "var(--border-primary)",
           secondary: "var(--border-secondary)",
         },
+        search_bar: "var(--search-bar)",
       },
     },
   },
