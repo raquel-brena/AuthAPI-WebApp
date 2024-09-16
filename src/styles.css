@@ -1,8 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+@layer reset, primeng, tailwind-base, tailwind-utilities;
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+    @tailwind components;
+    @tailwind utilities;
+}
+
+@layer reset {
+    button, input, optgroup, select, textarea {
+        font-family: inherit;
+        font-size: 100%;
+        line-height: 1.15;
+        margin: 0;
+    }
+}
 
   :root{
   --bg: #111E22;
@@ -87,6 +106,15 @@ button {
 
 .container-index {
   @apply w-full h-[91vh] bg-bg px-10 place-items-center box-border flex-col flex
+}
+
+
+.h1 {
+  @apply text-2xl font-semibold
+}
+
+.h2 {
+  @apply text-lg font-semibold
 }
 
 html, body { height: 100%; }

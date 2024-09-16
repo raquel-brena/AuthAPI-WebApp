@@ -1,0 +1,77 @@
+<main class="container-index relative">
+  @if (cardSelecionado) {
+  <p-dialog
+    [modal]="true"
+    [(visible)]="visible"
+    [position]="'right'"
+    [draggable]="false"
+    [style]="{ width: '85%', height: '95%' }"
+    [closeOnEscape]="true"
+    [closable]="false"
+    [dismissableMask]="true"
+  >
+    <span class="p-text-secondary block mb-5">Update your information.</span>
+    <button
+      class="p-button p-button-rounded p-button-text p-button-plain p-button-icon-only"
+      (click)="visible = false"
+    >
+      xxxxxx
+    </button>
+  </p-dialog>
+
+  }
+  <div
+    class="flex w-full h-full items-end justify-between flex-col md:flex-row"
+  >
+    <aside class="flex md:flex-col md:h-[95%] h-[10%] md:w-1/5 w-full gap-5">
+      <hgroup
+        class="flex md:w-full w-[20%] h-[5%] max-h-10 justify-between md:items-center md:flex-row flex-col sm:items-start"
+      >
+        <h1 class="h1">Product</h1>
+        <div class="flex items-end gap-1 font-semibold">
+          <p class="text-sm">1708</p>
+          <p class="text-xs text-text-placeholder">total products</p>
+        </div>
+      </hgroup>
+      <app-menu-filter />
+    </aside>
+
+    <aside class="flex flex-col md:h-[95%] md:w-3/4 gap-5 w-full">
+      <div class="flex w-full h-[7%] max-h-10 justify-between">
+        <!-- <app-search /> -->
+        <input
+          class="flex bg-search_bar w-5/12 h-full rounded-md p-2 border border-border-primary"
+          placeholder="Search product..."
+        />
+        <div class="flex gap-2 w-[15%]">
+          <app-button [outline]="true" [icon1]="'list'" [type]="'tiny'" />
+          <app-button [icon1]="'dashboard'" [type]="'tiny'" />
+        </div>
+
+        <div class="gap-2 flex w-2/5 justify-end">
+          <app-button
+            [outline]="true"
+            [text]="'Contact help'"
+            [outline]="true"
+          />
+          <app-button [text]="'Quick action'" [outline]="false" />
+        </div>
+      </div>
+      <div class="flex flex-col w-full h-[90%] gap-3 overflow-y-auto">
+        @for (cd of cardProductList; track cd) {
+        <app-card-product
+          (click)="openProductDetails(cd)"
+          [product]="{
+            title: cd.title,
+            variants: cd.variants,
+            category: cd.category,
+            retail_price: cd.retail_price,
+            wholesale_price: cd.wholesale_price,
+            stock: cd.stock.onHand
+          }"
+        />
+        }
+      </div>
+    </aside>
+  </div>
+</main>

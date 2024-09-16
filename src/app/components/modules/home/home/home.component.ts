@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MenuComponent } from '../Menu/menu/menu.component';
-import { ContainerCardComponent } from '../../dashboard/Card/index/container-card.component';
-import { InventoryComponent } from '../../inventory/index/inventory.component';
+import { ContainerCardComponent } from '../../dashboard/container-card.component';
+import { InventoryComponent } from '../../inventory/inventory.component';
 
 @Component({
   selector: 'app-home',
