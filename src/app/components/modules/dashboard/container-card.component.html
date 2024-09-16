@@ -1,0 +1,53 @@
+<main class="container-index md:overflow-auto">
+  <header class="w-full h-[10%] flex relative items-center justify-between">
+    <h1 class="h1">Dashboard</h1>
+    <div class="gap-2 flex">
+      <app-button [outline]="true" [text]="'Contact help'" [outline]="true" />
+      <app-button [text]="'Quick action'" [outline]="false" />
+    </div>
+  </header>
+
+  <section class="flex h-[85%] w-full flex-col items-center gap-9">
+    <aside
+      class="flex relative w-full md:flex-row flex-col h-[50%] gap-2 m-0 justify-center"
+    >
+      <div class="box w-full md:w-3/5">
+        <h2 class="h2">Stock level</h2>
+      </div>
+
+      <div class="box w-full md:w-2/5">
+        <div class="w-full flex mb-3 justify-between items-center">
+          <h2 class="h2">Best selling product</h2>
+          <button
+            class="uppercase text-theme duration-300 transition-colors hover:text-theme_hover items-center justify-center flex"
+          >
+            view more <mat-icon>chevron_right</mat-icon>
+          </button>
+        </div>
+        <div class="overflow-auto h-full w-full flex flex-col gap-2">
+          <app-card-product />
+          <app-card-product />
+          <app-card-product />
+          <app-card-product />
+          <app-card-product />
+          <app-card-product />
+        </div>
+      </div>
+    </aside>
+
+    <aside
+      class="flex relative flex-col md:flex-row w-full md:h-2/5 h-full gap-2 m-0 justify-center"
+    >
+      @for (tc of totalCardList; track tc) {
+      <div class="box w-full md:w-1/4 h-full">
+        <app-total-card
+          [icon]="tc.icon"
+          [percentage]="tc.percentage"
+          [title]="tc.title"
+          [total]="tc.total"
+        />
+      </div>
+      }
+    </aside>
+  </section>
+</main>
