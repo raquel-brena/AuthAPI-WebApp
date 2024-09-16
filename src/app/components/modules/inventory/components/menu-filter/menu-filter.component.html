@@ -1,0 +1,90 @@
+<nav
+  class="flex flex-col h-[98%] w-full bg-bg_fume-100 rounded-lg overflow-hidden"
+>
+  <div
+    class="grid auto-rows-auto grid-cols-1 px-3 py-1.5 min-h-[82%] h-full w-full gap-3"
+  >
+    <div class="gap-2 flex flex-col">
+      <label
+        class="uppercase text-text-placeholder text-xs font-semibold flex-col flex w-full"
+        >product status</label
+      >
+      <div
+        class="grid grid-cols-2 grid-rows-2 gap-2 columns-md items-center justify-center center w-full"
+      >
+        @for (status of statusList; track status) {
+        <app-checkbox
+          [isSelected]="productStatusSelected"
+          [title]="status"
+          [quantity]="1708"
+          (click)="productStatusSelected = status"
+        />
+        }
+      </div>
+    </div>
+
+    <div class="gap-2 flex flex-col">
+      <label
+        class="uppercase text-text-placeholder text-xs font-semibold flex-col w-full"
+        >PRODUCT TYPE</label
+      >
+      <div
+        class="grid grid-cols-2 grid-rows-1 gap-2 items-center justify-center"
+      >
+        @for (type of typesList; track type) {
+        <app-checkbox
+          [isSelected]="productTypeSelected"
+          [title]="type"
+          [quantity]="1708"
+          (click)="productTypeSelected = type"
+        />}
+      </div>
+    </div>
+
+    <div class="gap-2 flex flex-col">
+      <label
+        class="uppercase text-text-placeholder text-xs font-semibold flex-col flex w-full"
+        >SORTE BY</label
+      >
+      <app-select> app-select </app-select>
+    </div>
+    <div class="gap-2 flex flex-col">
+      <label
+        class="uppercase text-text-placeholder text-xs font-semibold flex-col flex w-full"
+        >STOCK ALERT</label
+      >
+      <app-select> app-select </app-select>
+    </div>
+
+    <div class="gap-2 flex flex-col">
+      <label
+        class="uppercase text-text-placeholder text-xs font-semibold flex-col flex w-full"
+        >CATEGORY</label
+      >
+      <app-select> app-select </app-select>
+    </div>
+
+    <div class="gap-2 flex flex-col">
+      <label
+        class="uppercase text-text-placeholder text-xs font-semibold flex-col flex w-full"
+        >PRICE</label
+      >
+      <div class="flex p-1 bg-bg_fume-200 rounded-lg items-center">
+        <label class="w-7 flex justify-center">$</label
+        ><input
+          class="bg-bg_fume-100 w-full rounded-sm p-1 px-2 text-sm"
+          placeholder="Minimum price"
+        />
+      </div>
+      <div class="flex p-1 bg-bg_fume-200 rounded-lg items-center">
+        <label class="w-7 flex justify-center">$</label
+        ><input
+          class="bg-bg_fume-100 w-full rounded-sm p-1 px-2 text-sm"
+          placeholder="Maximum price"
+        />
+      </div>
+    </div>
+  </div>
+
+  <button class="min-h-[12%] bg-bg_fume-200">Reset Filters</button>
+</nav>
