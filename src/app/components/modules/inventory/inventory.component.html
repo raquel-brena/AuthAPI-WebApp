@@ -5,23 +5,25 @@
     [(visible)]="visible"
     [position]="'right'"
     [draggable]="false"
-    [style]="{ width: '85%', height: '95%' }"
-    [closeOnEscape]="true"
-    [closable]="false"
-    [dismissableMask]="true"
+    pStyleClass="parent"
+    toggleClass="p-disabled"
+    [style]="{ width: '85%', height: '95%', display: 'flex', padding: '0' }"
   >
-    <span class="p-text-secondary block mb-5">Update your information.</span>
-    <button
-      class="p-button p-button-rounded p-button-text p-button-plain p-button-icon-only"
-      (click)="visible = false"
-    >
-      xxxxxx
-    </button>
+    <main class="flex flex-col w-full h-full bg-bg_fume-200">
+      <nav class="flex w-full h-9">
+        <button
+          class="p-button p-button-rounded p-button-text p-button-plain p-button-icon-only"
+          (click)="visible = false"
+        >
+          xxxxx
+        </button>
+      </nav>
+    </main>
+    <!-- <app-visualize-card [cardSelecionado]="cardSelecionado"/> -->
   </p-dialog>
-
   }
   <div
-    class="flex w-full h-full items-end justify-between flex-col md:flex-row"
+    class="flex w-full h-full items-end justify-between flex-col md:flex-row md:gap-0 gap-5"
   >
     <aside class="flex md:flex-col md:h-[95%] h-[10%] md:w-1/5 w-full gap-5">
       <hgroup
@@ -30,7 +32,9 @@
         <h1 class="h1">Product</h1>
         <div class="flex items-end gap-1 font-semibold">
           <p class="text-sm">1708</p>
-          <p class="text-xs text-text-placeholder">total products</p>
+          <p class="text-xs text-text-placeholder sm:whitespace-nowrap">
+            total products
+          </p>
         </div>
       </hgroup>
       <app-menu-filter />
@@ -42,7 +46,10 @@
         <input
           class="flex bg-search_bar w-5/12 h-full rounded-md p-2 border border-border-primary"
           placeholder="Search product..."
+          [(ngModel)]="searchProduct"
+          (input)="onSearch()"
         />
+
         <div class="flex gap-2 w-[15%]">
           <app-button [outline]="true" [icon1]="'list'" [type]="'tiny'" />
           <app-button [icon1]="'dashboard'" [type]="'tiny'" />
@@ -57,8 +64,10 @@
           <app-button [text]="'Quick action'" [outline]="false" />
         </div>
       </div>
-      <div class="flex flex-col w-full h-[90%] gap-3 overflow-y-auto">
-        @for (cd of cardProductList; track cd) {
+      <div
+        class="md:flex md:flex-col w-full h-[90%] gap-3 overflow-y-auto grid grid-cols-2"
+      >
+        @for (cd of filteredProducts; track cd) {
         <app-card-product
           (click)="openProductDetails(cd)"
           [product]="{
