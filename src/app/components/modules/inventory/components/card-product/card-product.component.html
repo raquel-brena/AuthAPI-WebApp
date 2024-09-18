@@ -1,12 +1,14 @@
 <object
-  class="flex cursor-pointer hover:bg-bg_fume-200 transition-colors duration-200 flex-grow-0 bg-bg_fume-100 w-full border border-border-primary min-h-[20%] h-16 items-center rounded-md p-1"
+  class="flex cursor-pointer hover:bg-bg_fume-200 transition-colors duration-200 flex-grow-0 bg-bg_fume-100 w-full border border-border-primary md:min-h-[20%] min-h-40 md:h-16 md:items-center rounded-md p-1"
 >
-  <div class="size-14 bg-slate-200 rounded-md"></div>
+  <div class="min-h-14 min-w-14 size-14 bg-slate-200 rounded-md"></div>
   <div
     class="flex w-1/2 flex-col px-2 text-text-primary bg gap-1 font-semibold"
   >
     <p class="">{{ product.title }}</p>
-    <div class="flex gap-4 text-xs items-center text-text-placeholder">
+    <div
+      class="flex md:gap-4 text-xs md:items-center text-text-placeholder flex-col md:flex-row"
+    >
       <div>
         <p class="bg-theme_accent p-1 text-black rounded-md">
           {{ product.variants }} variants
@@ -22,7 +24,9 @@
     </div>
   </div>
 
-  <div class="flex w-1/2 px-2 text-text-primary bg gap-1 font-semibold">
+  <div
+    class="flex w-1/2 px-2 text-text-primary bg gap-1 font-semibold md:flex-row flex-col"
+  >
     <div class="w-1/2 flex flex-col h-full justify-between gap-2">
       <p class="text-text-placeholder text-xs">RETAIL PRICE</p>
       <p class="text-sm font-medium">${{ product.retail_price }}.00-$220.00</p>
@@ -31,10 +35,10 @@
     <div class="w-1/2 flex flex-col h-full justify-between gap-2">
       <p class="text-text-placeholder text-xs">WHOLESALE PRICE</p>
       <p class="text-sm font-medium">
-        ${{ product.wholesale_price }}..00-$170.00
+        ${{ product.wholesale_price }}.00-$170.00
       </p>
     </div>
 
-    <app-button [icon1]="'more_horiz'" [type]="'more'" />
+    <app-button [icon1]="'more_horiz'" [type]="'more'"  />
   </div>
 </object>

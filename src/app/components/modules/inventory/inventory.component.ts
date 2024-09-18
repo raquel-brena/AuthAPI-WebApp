@@ -4,6 +4,7 @@ import { MenuFilterComponent } from './components/menu-filter/menu-filter.compon
 import { CardProductComponent } from './components/card-product/card-product.component';
 import { SearchComponent } from './components/search/search.component';
 import { DialogModule } from 'primeng/dialog';
+import { FormsModule } from '@angular/forms';
 
 interface CardProduct {
   active: boolean;
@@ -29,6 +30,7 @@ interface CardProduct {
     SearchComponent,
     ButtonComponent,
     DialogModule,
+    FormsModule,
   ],
   templateUrl: './inventory.component.html',
   styleUrl: './inventory.component.scss',
@@ -36,6 +38,7 @@ interface CardProduct {
 export class InventoryComponent {
   cardSelecionado!: CardProduct | null;
   visible = false;
+  searchProduct = '';
 
   openProductDetails(card: any) {
     this.cardSelecionado = card;
@@ -114,4 +117,12 @@ export class InventoryComponent {
       },
     },
   ];
+
+  filteredProducts = [...this.cardProductList];
+
+  onSearch(): void {
+    this.filteredProducts = this.cardProductList.filter((product) =>
+      product.title.toLowerCase().includes(this.searchProduct.toLowerCase())
+    );
+  }
 }
