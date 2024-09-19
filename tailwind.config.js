@@ -10,6 +10,7 @@ module.exports = {
         bg_fume: {
           100: "var(--bg-fume)",
           200: "var(--bg-fume-100)",
+          300: "var(--bg-fume-200)",
         },
         text: {
           primary: "var(--text-primary)",
