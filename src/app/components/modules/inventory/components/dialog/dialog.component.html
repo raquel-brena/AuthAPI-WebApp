@@ -1,6 +1,11 @@
-<main class="flex flex-col w-full h-full bg-bg_fume-100 rounded-s-lg px-4 space-y-4">
+<main
+  class="flex flex-col w-full h-full bg-bg_fume-100 rounded-s-lg px-4 space-y-4"
+>
   <nav class="flex w-full h-12 justify-between">
-    <button class="p-button p-button-rounded p-button-text p-button-plain p-button-icon-only" (click)="visible = false">
+    <button
+      class="p-button p-button-rounded p-button-text p-button-plain p-button-icon-only"
+      (click)="visible = false"
+    >
       xxxxx
     </button>
     <div class="flex w-2/5 items-center justify-between">
@@ -12,46 +17,29 @@
       <div class="flex size-5 bg-white"></div>
     </div>
   </nav>
-  <header class="flex flex-col h-fit justify-center py-2 ">
+  <header class="flex flex-col h-fit justify-center py-2">
     <h1 class="h1">{{ cardSelecionado.title }}</h1>
     <div class="flex text-sm text-text-placeholder font-normal gap-4">
       <span>SKU: {{ cardSelecionado.sku }}</span>
       <span>{{ cardSelecionado.category }}</span>
       <span>{{
         cardSelecionado.stock.onHand > 1 ? "Stocked Product" : ""
-        }}</span>
+      }}</span>
     </div>
   </header>
   <div class="flex w-1/3 max-h-24">
-    <app-menu />
+    <app-menu
+      [menuVisible]="menuVisible"
+      (setSelectedItem)="setSelectedItem($event)"
+    />
   </div>
-  <div class="flex h-3/4 w-full justify-between mt-8">
-    <aside class="flex flex-col h-full w-3/5 rounded-md gap-2">
-      <app-images />
-      
-      <div class="grid grid-rows-5 grid-cols-1 w-full h-full">
-        <h2 class="h2">Basic Information</h2>
-        <div class="flex w-[40%] text-sm justify-between" >
-          <p class="text-text-fume font-semibold">TOTAL BE PACKED</p>
-          <p class="font-normal">Stocked Product</p>
-        </div>
-        <div class="flex w-[40%] text-sm justify-between" >
-          <p class="text-text-fume font-semibold">TOTAL BE PACKED</p>
-          <p class="font-normal">Stocked Product</p>
-        </div>
-        <div class="flex w-[40%] text-sm justify-between" >
-          <p class="text-text-fume font-semibold">TOTAL BE PACKED</p>
-          <p class="font-normal">Stocked Product</p>
-        </div>
-        <div class="flex w-[40%] text-sm justify-between" >
-          <p class="text-text-fume font-semibold">TOTAL BE PACKED</p>
-          <p class="font-normal">Stocked Product</p>
-        </div>
-      </div>
-    </aside>
-    <aside class="flex flex-col h-full w-1/3 bg-bg_fume-200 rounded-md justify-between items-center px-4 pt-2">
-      <h2 class='h2 w-full'>Stock</h2>
-      <div class="flex h-[90%] w-full bg-[#30434d]"></div>
-    </aside>
+  <div class="flex h-3/4 w-full">
+    @switch (menuVisible) { @case ("General Information") {
+    <app-general-informations />
+    } @case ("History") {
+    <app-history />
+    } @case ("Notes") {
+    <app-notes />
+    } @default { "No compoenent found" } }
   </div>
 </main>
