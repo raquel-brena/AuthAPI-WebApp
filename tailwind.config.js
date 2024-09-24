@@ -15,6 +15,7 @@ module.exports = {
         text: {
           primary: "var(--text-primary)",
           secondary: "var(--text-secondary)",
+          fume: "var(--text-fume)",
           tertiary: "var(--text-tertiary)",
           placeholder: "var(--text-placeholder)",
           on_accent: "var(--text-on-accent)",
