@@ -6,47 +6,12 @@
     [position]="'right'"
     [draggable]="false"
     toggleClass="p-disabled"
-    [style]="{ width: '85%', height: '95%'}"
+    [style]="{ width: '85%', height: '95%' }"
   >
-  <ng-template pTemplate="headless">  
-    <main class="flex flex-col w-full h-full bg-bg_fume-200 rounded-s-lg px-4">
-    <nav class="flex w-full h-12 bg-slate-300 justify-between">
+    <ng-template pTemplate="headless">
+    <app-dialog [cardSelecionado]="cardSelecionado" [visible]="visible"/>
+    </ng-template>
 
-      <button
-        class="p-button p-button-rounded p-button-text p-button-plain p-button-icon-only"
-        (click)="visible = false"
-      >
-        xxxxx
-      </button>
-      <div class=" flex w-2/5 items-center justify-between">
-        <button>active</button>
-        <div class="flex w-2/3">
-          <button>edit</button>
-          <button>clone</button>
-        </div>
-          <div class="flex size-5 bg-white"></div>
-      </div>
-    </nav>
-    <header class="flex flex-col h-1/5 justify-center">
-      <h1 class="h1">{{cardSelecionado.title}}</h1>
-      <div class="flex text-sm text-text-placeholder font-normal gap-4">
-        <span>SKU: {{cardSelecionado.sku}}</span>
-        <span>{{cardSelecionado.category}}</span>
-        <span>{{ cardSelecionado.stock.onHand > 1 ? "Stocked Product" : "" }}</span>
-      </div>
-    </header>
-    <div class="flex w-1/4 "> 
-      <nav class="flex text-xs  rounded-md bg-bg_fume-300  tracking-wide  font-medium 
-      text-text-secondary">
-      <button class="bg-bg_fume-200 shadow-inner  rounded-md shadow-green-200/45 px-3 py-4 text-theme">General Information</button>
-      <button class="bg-bg_fume-300 rounded-md px-3 py-4 border-r-[1px] border-text-secondary">History</button>
-      <button class="bg-bg_fume-300 rounded-md px-3 py-4 ">Notes</button>
-  </nav>
-</div>
-   
-  </main>
-</ng-template>
-  
     <!-- <app-visualize-card [cardSelecionado]="cardSelecionado"/> -->
   </p-dialog>
   }

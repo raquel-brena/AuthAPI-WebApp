@@ -5,6 +5,7 @@ import { CardProductComponent } from './components/card-product/card-product.com
 import { SearchComponent } from './components/search/search.component';
 import { DialogModule } from 'primeng/dialog';
 import { FormsModule } from '@angular/forms';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 interface CardProduct {
   active: boolean;
@@ -30,6 +31,7 @@ interface CardProduct {
     SearchComponent,
     ButtonComponent,
     DialogModule,
+    DialogComponent,
     FormsModule,
   ],
   templateUrl: './inventory.component.html',
